@@ -1,0 +1,123 @@
+#+TITLE: A Flow Based Approach To Smooth, Even \(L_p\)-Minkowski Problems
+#+BEAMER_HEADER: \subtitle{China/Australia PDE Seminar\\Joint work with Mohammad Ivaki and Julian Scheuer}
+#+AUTHOR: Paul Bryan
+#+EMAIL: pabryan@gmail.com
+#+DATE: Dec 2018
+
+#+SETUPFILE: ~/.emacs.d/org-templates/bibliography.org
+
+#+OPTIONS: H:2 toc:t
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation]
+#+BEAMER_THEME: Boadilla
+#+LaTeX_HEADER: \AtBeginSection[]{\begin{frame}\frametitle{Table of Contents}\tableofcontents[currentsection]\end{frame}}
+#+LaTeX_HEADER: \setbeamertemplate{navigation symbols}{}
+#+LaTeX_HEADER: \input{local_definitions}
+
+* Abstract                                                         :noexport:
+
+We study long-time existence and asymptotic behavior for a class of anisotropic, expanding curvature flows. For this we adapt new curvature estimates, which were developed by Guan, Ren and Wang to treat some stationary prescribed curvature problems. As an application we give a unified flow approach to the existence of smooth, even $L_p$-Minkowski problems in $\mathbb{R}^{n+1}$ for $p > −(n+1)$. Such problems generalise the Minkowski problem of prescribing Gauss curvature arising similarly via $L_p$-mixed volumes generalising the mixed volumes in the Brunn-Minkowksi theory.
+
+* The \(L_p\)-Minkowski Problem
+** The Minkowski Problem
+
+Prescribed Gauss curvature problem:
+
+- Let \(\varphi : \sphere^n \to \RR\) be a smooth, positive function. \pause
+- Does there exist a smooth convex body \(\Omega \subseteq \RR^{n+1}\) with boundary \(M = \partial \Omega\) such that
+  \[
+  \nu_{\sharp} \mu_M = \mu := \frac{1}{\varphi} \mu_{\sphere^n}?
+  \]
+  Here \(\nu : M \to \sphere^n\) is the Gauss map which is a diffeomorphism. \pause
+
+Prescribed Gauss curvature \(K\) since
+\[
+\nu_{\sharp} \mu_M = \frac{1}{K} \circ \nu^{-1} \mu_{\sphere^n}
+\]
+and hence
+\[
+K(x) = \varphi \circ \nu (x), \quad x \in M.
+\]
+** Mixed Volumes
+** The \(L_p\)-Minkowski Problem
+** Mixed \(p\)-volumes
+** References
+
+- Huge literature!
+- See refs in: Analysis & PDE Volume 12, Issue 2 (2019) arXiv:1608.02770 
+
+[[file:refs.png]]
+
+* The Flow
+
+** Definition Of The Flow
+
+#+Begin_export latex
+\[
+\begin{cases}
+\partial_t F &= \varphi(\nu) \frac{h^{2-p}}{K} \nu \\
+F(\cdot,0) &= F_{0}(\cdot).
+\end{cases}
+\]
+#+end_export
+\pause
+
+- Speed \(V = \varphi h^{2-p} K^{-1}\) is /anisotropic/ with dependence not only on \(\nu\) but also \(h\). \pause
+- Expect convergence to self-similar solutions (after volume normalisation) satisfying:
+  \[
+  h = \ip{F}{\nu} = \text{const} V = \text{const} \> h^{2-p} \varphi K^{-1}.
+  \]
+  \pause
+
+*** 
+Self-similar solutions solve the \(L_p\)-Minkowski problem:
+\[
+\frac{h^{1-p} (\nu(x))}{k(x)} = \frac{\lambda}{\varphi(\nu(x))}
+\]
+
+** Evolution Of The Support Function
+
+\[
+\partial_t h = \varphi h^{2-p} \det \left(\bar{\nabla}^2 h + h \id\right)
+\]
+
+\pause
+
+Self similar solutions
+\[
+h^{1-p} \det \left(\bar{\nabla}^2 h + h \id\right) = \frac{c}{\varphi}
+\]
+
+** Convergence Results Of The Flow: The Even Case
+
+Let $-(n+1)<p<\infty$ and $\varphi$ be a positive, smooth even function on $\mathbb{S}^{n}$ i.e., $\varphi(u)=\varphi(-u)$. Suppose the initial body $\Omega_0$ is origin-symmetric.
+
+\pause
+
+#+begin_theorem
+There exists a unique origin-symmetric solution $\{M_t\}$ of the flow such that $\{\tilde{M}_t\}$ converges for a subsequence of times in $C^{1}$ to a smooth, origin-symmetric, strictly convex self similar solution. Also, when $p\leq n+1$ the convergence is in $C^{\infty}$, and if $p\ge 1$ the convergence holds for the full sequence.
+#+end_theorem
+
+** Convergence Results Of The Flow: \(-(n+1) < p < -n\)
+
+Let $-(n+1) < p\leq -n$, and /do not assume/ $\varphi$ is even. Let the initial body $\Omega_0$ have \santalo{} point at the origin, i.e.
+$$\int_{\mathbb{S}^{n}}\frac{u}{h_{\omega_0}(u)^{1-p}} \frac{1}{\varphi(u)} d\sigma(u)=0.$$
+\pause
+
+#+BEGIN_theorem
+There exists a unique solution $\{M_t\}$ of flow such that $\{\tilde{M}_t\}$ converges for a subsequence of times in $C^{\infty}$ to a positive, smooth, strictly convex self similar solution.
+#+END_theorem
+
+** Convergence Results Of The Flow: The (almost) Isotropic Case
+
+Let $\varphi\equiv 1$, $1\neq p>-(n+1)$ and $\Omega_0$ have \santalo{} point at the origin.
+
+\pause
+
+#+BEGIN_theorem
+There exists a unique solution $\{M_t\}$ of the flow such that $\{\tilde{M}_t\}$ converges  in $C^{1}$ to the unit sphere. In addition, for $1\neq p\leq n+1$ the convergence holds in $C^{\infty}$.
+#+END_theorem
+
+* Outline of The Proof
+* $C^2$ Estimates
+
