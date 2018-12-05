@@ -18,7 +18,45 @@
 
 We study long-time existence and asymptotic behavior for a class of anisotropic, expanding curvature flows. For this we adapt new curvature estimates, which were developed by Guan, Ren and Wang to treat some stationary prescribed curvature problems. As an application we give a unified flow approach to the existence of smooth, even $L_p$-Minkowski problems in $\mathbb{R}^{n+1}$ for $p > −(n+1)$. Such problems generalise the Minkowski problem of prescribing Gauss curvature arising similarly via $L_p$-mixed volumes generalising the mixed volumes in the Brunn-Minkowksi theory.
 
+* Quote
+
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+** On The Importance of Being Minkowski
+
+#+BEGIN_quote
+The importance of the Minkowski problem and its solution is to be felt both in differential geometry and elliptic partial differential equations, on either count going far beyond the impact that the literal statement superficially may have. From the geometric view point it is the Rosetta Stone, from which several related problems can be solved.
+
+-- Calabi
+#+END_quote
+
 * The \(L_p\)-Minkowski Problem
+** Support Function and Gauss map
+
+Let \(\Omega \subseteq \RR^{n+1}\) be a /strictly/ convex body containing the origin, with smooth boundary \(\partial \Omega = F(M)\) and let \(\nu(x)\) be the unit normal at \(x \in M\). \pause
+
+- Then \(\nu : M \to \sphere^n\) is a diffeomorphism. \pause
+
+Define the /support function/ \(h\) to be the distance to the supporting hyperplane with normal \(z\):
+\[
+h(x) = \ip{F(x)}{\nu(x)} (x \in M), \quad h(z) = \ip{F(\nu^{-1}(z))}{z}, (z \in \sphere^n).
+\]
+
+\pause
+
+To recover \(\Omega\) from \(h\):
+\[
+F(\nu^{-1}(z)) = h(z) z + \nabla_{\sphere^{n}} h.
+\]
+\pause
+
+The \(\Omega\)-surface measure on \(\sphere^n\). For \(V \subseteq \sphere^n\):
+\[
+\sigma_{\Omega} (V) := \nu_{\sharp} \sigma_M (V) := \sigma_M (\nu^{-1} (V)) = \frac{1}{K \circ \nu^{-1}} \sigma_{\sphere^n} (V).
+\]
+
 ** The Minkowski Problem
 
 Prescribed Gauss curvature problem:
@@ -26,21 +64,70 @@ Prescribed Gauss curvature problem:
 - Let \(\varphi : \sphere^n \to \RR\) be a smooth, positive function. \pause
 - Does there exist a smooth convex body \(\Omega \subseteq \RR^{n+1}\) with boundary \(M = \partial \Omega\) such that
   \[
-  \nu_{\sharp} \mu_M = \mu := \frac{1}{\varphi} \mu_{\sphere^n}?
+  \nu_{\sharp} \sigma_M = \sigma := \varphi \sigma_{\sphere^n}?
   \]
   Here \(\nu : M \to \sphere^n\) is the Gauss map which is a diffeomorphism. \pause
 
-Prescribed Gauss curvature \(K\) since
+Prescribed Gauss curvature \(K\) since if \(K(x) = 1/\varphi(\nu(x))\), then
 \[
-\nu_{\sharp} \mu_M = \frac{1}{K} \circ \nu^{-1} \mu_{\sphere^n}
+\nu_{\sharp} \sigma_M = \frac{1}{K \circ \nu^{-1}} \sigma_{\sphere^n} = \varphi \sigma_{\sphere^n}.
 \]
-and hence
+\pause
+
+- Answer is yes provided \(\sigma\) has centroid at the origin. Note this is necessary since \(\int \frac{1}{K (\nu^{-1} (z))} z d\sigma_{\sphere^n} = 0\).
+
+** Minkowksi Sums, Mixed Volumes And Integral Formula
+
+- Let \(\Omega_1, \Omega_2\) be convex bodies with support functions \(h_1, h_2\). \pause
+- For \(\lambda_1, \lambda_2 \geq 0\)
+  - Define \(\lambda_1 \Omega_1 + \lambda_2 \Omega_2\) to be the convex body with support function \(\lambda_1 h_1 + \lambda_2 h_2\). \pause
+
+Mixed Volume:
 \[
-K(x) = \varphi \circ \nu (x), \quad x \in M.
+V_1(\Omega_1, \Omega_2) = \frac{1}{n+1} \lim_{\epsilon \to 0^+} \frac{V(\Omega_1 + \epsilon \Omega_2) - V(\Omega_1)}{\epsilon}.
 \]
-** Mixed Volumes
+\pause
+
+Integral Representation
+\[
+V_1(\Omega_1, \Omega_2) = \frac{1}{n+1} \int_{\sphere^n} h_2 (z) d\sigma_1(z)
+\]
+where \(\sigma_1 = \nu_{\sharp} \sigma_1 = \frac{1}{K_1} \sigma_{\sphere^n}\). \pause
+
+- Prescribed curvature: \(\Omega_2 = \mathbb{B}^{n+1} \Rightarrow h_2 \equiv 1\). Given \(\sigma = \varphi \sigma_{\sphere^n}\), solve for \(K = \varphi^{-1}\)!
+
+** Firey Sums, Mixed \(p\)-volumes And Integral Formula
+
+- Let \(\Omega_1, \Omega_2\) be convex bodies with support functions \(h_1, h_2\). \pause
+- For \(p \geq 1\) and \(\lambda_1, \lambda_2 \geq 0\)
+  - Define \(\lambda_1 \Omega_1 +_p \lambda_2 \Omega_2\) to be the convex body with support function \(\lambda_1 h_1^p + \lambda_2 h_2^p\). \pause
+
+Mixed \(p\)-Volume:
+\[
+V_p(\Omega_1, \Omega_2) = \frac{1}{n+1} \lim_{\epsilon \to 0^+} \frac{V(\Omega_1 +_p \epsilon \Omega_2) - V(\Omega_1)}{\epsilon}.
+\]
+\pause
+
+Integral Representation
+\[
+V_p(\Omega_1, \Omega_2) = \frac{p}{n+1} \int_{\sphere^n} h_2^p (z) d\sigma_1^p(z) = \frac{p}{n+1} \int_{\sphere^n} h_2^p (z) h_1^{1-p} d\sigma_1(z).
+\]
+
 ** The \(L_p\)-Minkowski Problem
-** Mixed \(p\)-volumes
+
+Integral Representation
+\[
+V_p(\Omega, \sphere^n) = \frac{p}{n+1} \int_{\sphere^n} h^{1-p} dS(z) = \frac{p}{n+1} \int_{\sphere^n} \frac{h^{1-p}}{K} d\sigma_{\sphere^n}.
+\]
+\pause
+
+*** 
+
+Given a measure \(\sigma = \varphi \sigma_{\sphere^n}\), when is it equal to \(\sigma_{\Omega}^p\) for some convex body \(\Omega\)?\pause Precisely when we may solve the \(L_p\) prescribed curvature equation:
+\[
+\frac{h^{1-p}}{K} = \varphi
+\]
+
 ** References
 
 - Huge literature!
@@ -49,7 +136,6 @@ K(x) = \varphi \circ \nu (x), \quad x \in M.
 [[file:refs.png]]
 
 * The Flow
-
 ** Definition Of The Flow
 
 #+Begin_export latex
