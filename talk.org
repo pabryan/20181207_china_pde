@@ -66,7 +66,8 @@ Prescribed Gauss curvature problem:
   \[
   \nu_{\sharp} \sigma_M = \sigma := \varphi \sigma_{\sphere^n}?
   \]
-  Here \(\nu : M \to \sphere^n\) is the Gauss map which is a diffeomorphism. \pause
+
+\pause
 
 Prescribed Gauss curvature \(K\) since if \(K(x) = 1/\varphi(\nu(x))\), then
 \[
@@ -78,55 +79,63 @@ Prescribed Gauss curvature \(K\) since if \(K(x) = 1/\varphi(\nu(x))\), then
 
 ** Minkowksi Sums, Mixed Volumes And Integral Formula
 
-- Let \(\Omega_1, \Omega_2\) be convex bodies with support functions \(h_1, h_2\). \pause
-- For \(\lambda_1, \lambda_2 \geq 0\)
-  - Define \(\lambda_1 \Omega_1 + \lambda_2 \Omega_2\) to be the convex body with support function \(\lambda_1 h_1 + \lambda_2 h_2\). \pause
+- Let \(\Omega, \Omega'\) be convex bodies with support functions \(h_1, h_2\). \pause
+- For \(\lambda, \lambda' \geq 0\)
+  - Define \(\lambda \Omega + \lambda' \Omega'\) to be the convex body with support function \(\lambda h + \lambda' h\). \pause
 
 Mixed Volume:
 \[
-V_1(\Omega_1, \Omega_2) = \frac{1}{n+1} \lim_{\epsilon \to 0^+} \frac{V(\Omega_1 + \epsilon \Omega_2) - V(\Omega_1)}{\epsilon}.
+V_1(\Omega, \Omega') = \frac{1}{n+1} \lim_{\epsilon \to 0^+} \frac{V(\Omega + \epsilon \Omega') - V(\Omega)}{\epsilon}.
 \]
 \pause
 
 Integral Representation
 \[
-V_1(\Omega_1, \Omega_2) = \frac{1}{n+1} \int_{\sphere^n} h_2 (z) d\sigma_1(z)
+V_1(\Omega, \Omega') = \frac{1}{n+1} \int_{\sphere^n} h'(z) d\sigma_1(z)
 \]
-where \(\sigma_1 = \nu_{\sharp} \sigma_1 = \frac{1}{K_1} \sigma_{\sphere^n}\). \pause
+where \(\sigma_1 = \nu_{\sharp} \sigma = \frac{1}{K} \sigma_{\sphere^n}\). \pause
 
-- Prescribed curvature: \(\Omega_2 = \mathbb{B}^{n+1} \Rightarrow h_2 \equiv 1\). Given \(\sigma = \varphi \sigma_{\sphere^n}\), solve for \(K = \varphi^{-1}\)!
+- Prescribed curvature: \(\Omega' = \mathbb{B}^{n+1} \Rightarrow h' \equiv 1\). Given \(\sigma = \varphi \sigma_{\sphere^n}\), solve for \(K = \varphi^{-1}\)!
 
 ** Firey Sums, Mixed \(p\)-volumes And Integral Formula
 
-- Let \(\Omega_1, \Omega_2\) be convex bodies with support functions \(h_1, h_2\). \pause
-- For \(p \geq 1\) and \(\lambda_1, \lambda_2 \geq 0\)
-  - Define \(\lambda_1 \Omega_1 +_p \lambda_2 \Omega_2\) to be the convex body with support function \(\lambda_1 h_1^p + \lambda_2 h_2^p\). \pause
+- Let \(\Omega, \Omega'\) be convex bodies with support functions \(h, h'\). \pause
+- For \(p \geq 1\) and \(\lambda, \lambda' \geq 0\)
+  - Define \(\lambda \Omega +_p \lambda' \Omega'\) to be the convex body with support function \(\lambda h^p + \lambda' h'^p\). \pause
 
 Mixed \(p\)-Volume:
 \[
-V_p(\Omega_1, \Omega_2) = \frac{1}{n+1} \lim_{\epsilon \to 0^+} \frac{V(\Omega_1 +_p \epsilon \Omega_2) - V(\Omega_1)}{\epsilon}.
+V_p(\Omega, \Omega') = \frac{1}{n+1} \lim_{\epsilon \to 0^+} \frac{V(\Omega +_p \epsilon \Omega') - V(\Omega)}{\epsilon}.
 \]
 \pause
 
 Integral Representation
 \[
-V_p(\Omega_1, \Omega_2) = \frac{p}{n+1} \int_{\sphere^n} h_2^p (z) d\sigma_1^p(z) = \frac{p}{n+1} \int_{\sphere^n} h_2^p (z) h_1^{1-p} d\sigma_1(z).
+V_p(\Omega, \Omega') = \frac{p}{n+1} \int_{\sphere^n} h'^p (z) d\sigma_p(z) = \frac{p}{n+1} \int_{\sphere^n} h'^p (z) h^{1-p} d\sigma_1(z).
 \]
 
 ** The \(L_p\)-Minkowski Problem
 
 Integral Representation
 \[
-V_p(\Omega, \sphere^n) = \frac{p}{n+1} \int_{\sphere^n} h^{1-p} dS(z) = \frac{p}{n+1} \int_{\sphere^n} \frac{h^{1-p}}{K} d\sigma_{\sphere^n}.
+V_p(\Omega, \mathbb{B}^n) = \frac{p}{n+1} \int_{\sphere^n} h^{1-p} d\sigma_1(z) = \frac{p}{n+1} \int_{\sphere^n} \frac{h^{1-p}}{K} d\sigma_{\sphere^n}.
 \]
 \pause
 
 *** 
 
-Given a measure \(\sigma = \varphi \sigma_{\sphere^n}\), when is it equal to \(\sigma_{\Omega}^p\) for some convex body \(\Omega\)?\pause Precisely when we may solve the \(L_p\) prescribed curvature equation:
+Given a measure \(\sigma = \varphi \sigma_{\sphere^n}\), when is it equal to \(\sigma_p\) for some convex body \(\Omega\)?\pause Precisely when we may solve the \(L_p\) prescribed curvature equation:
 \[
 \frac{h^{1-p}}{K} = \varphi
 \]
+\pause
+
+*** Normalised Problem
+
+\[
+\frac{h^{1-p}}{K} = V(\Omega) \varphi
+\]
+is equivalent except in the critical case \(p = n + 1\) where there may be no solution to the unnormalised problem.
 
 ** References
 
@@ -156,9 +165,9 @@ F(\cdot,0) &= F_{0}(\cdot).
   \pause
 
 *** 
-Self-similar solutions solve the \(L_p\)-Minkowski problem:
+Self-similar solutions solve the \(L_p\)-Minkowski problem (after appropriate rescaling):
 \[
-\frac{h^{1-p} (\nu(x))}{k(x)} = \frac{\lambda}{\varphi(\nu(x))}
+\frac{h^{1-p} (\nu(x))}{K(x)} = \frac{c}{\varphi(\nu(x))}
 \]
 
 ** Evolution Of The Support Function
