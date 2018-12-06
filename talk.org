@@ -240,6 +240,52 @@ There exists a unique solution $\{M_t\}$ of the flow such that $\{\tilde{M}_t\}$
   to convert the upperbound on \(K^{\ast}\) into a lower bound on \(K\).
 
 ** \(C^2\) Estimates: Bounds On Hessian
+
+Define
+\[
+\Theta = \frac{1}{2} \ln \|A\|^2 - \alpha \ln h.
+\]
+\pause
+
+Apply the maximum principle to show that for \(\alpha >> 0\), \(\Theta < 0\). \pause
+
+If the conclusion is false so that \(\Thetae = 0\), then we have bounds:
+\[
+\frac{c_1^{\alpha}}{\sqrt{n}}\leq \kappa_{\max} \leq c_2^{\alpha}.
+\]
+where \(c_1 \leq h \leq c_2\).
+\pause
+
+If there exists positive numbers \(\delta_2, \dots, \delta_n\) such that
+\[
+\kappa_i \geq \delta \kappa_{\max}
+\]
+we obtain a contradiction to bounds on \(K\) for \(\alpha\) large.
+
+** \(C^2\) Estimates: Bounds On Hessian
+
+Guan-Ren-Wang Dichotomy: If we don't have the \(\delta_i\) then
+\[
+A_i+B_i+C_i+D_i-E_i \geq 0.
+\]
+\pause
+
+Here the maximum principle gives us:
+\begin{align*}
+0 \leq&\frac{\psi}{\|W\|^2}\left(\sum_lw_{ll}\left(C+Cw_{ll}^2\right)-n\mathcal{K}\sum_lw_{ll}^3+\mathcal{K}^{ii}w_{ii}^2\|W\|^2\right)\\
+&+\alpha\psi\left(\frac{n\mathcal{K}}{h}-\mathcal{K}^{ii}w_{ii}^2-\frac{\mathcal{K}^{ii}w_{ii}^2(\partial_i\cdot F)^2}{h^2}+\frac{\mathcal{K}}{h\psi}\sum_s(\partial_s\cdot F) d_F\psi(\partial_s)\right)\\
+&-\psi\sum_i\left(A_i+B_i+C_i+D_i-E_i\right)
+-\frac{\alpha\psi\mathcal{K}}{h}-\psi\mathcal{K}\sum_i\frac{w_{ii}^3}{\|W\|^2},
+\end{align*}
+
+** \(C^2\) Estimates: Bounds On Hessian
+
+This time we obtain
+\[
+0 \leq -\frac{c_1^{\alpha}}{\sqrt{n}} + C \alpha
+\]
+giving a contradiction by choosing \(\alpha >> 1\) (can assume \(c_1 \geq 1\)).
+
 ** Convergence
 
 - For \(p \geq n + 1\): Long time existence with \(\lim_{t\to \infty} h = \infty\) by comparison with spheres. \pause
