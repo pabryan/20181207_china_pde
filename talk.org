@@ -14,6 +14,8 @@
 #+LaTeX_HEADER: \setbeamertemplate{navigation symbols}{}
 #+LaTeX_HEADER: \input{local_definitions}
 
+#+LaTex_HEADER: \titlegraphic{\includegraphics[height=.2\textheight]{sunyatsen.jpg}}
+
 * Abstract                                                         :noexport:
 
 We study long-time existence and asymptotic behavior for a class of anisotropic, expanding curvature flows. For this we adapt new curvature estimates, which were developed by Guan, Ren and Wang to treat some stationary prescribed curvature problems. As an application we give a unified flow approach to the existence of smooth, even $L_p$-Minkowski problems in $\mathbb{R}^{n+1}$ for $p > −(n+1)$. Such problems generalise the Minkowski problem of prescribing Gauss curvature arising similarly via $L_p$-mixed volumes generalising the mixed volumes in the Brunn-Minkowksi theory.
