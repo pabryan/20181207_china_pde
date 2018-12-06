@@ -250,3 +250,24 @@ There exists a unique solution $\{M_t\}$ of the flow such that $\{\tilde{M}_t\}$
 *Thus we have shown a fixed point exists and hence obtained a solution to the \(L_p\)-Minkowski problem.* \pause
 
 Further convergence results can be obtained standard arguments exploiting the \(C^2\) estimates.
+** Thankyou!
+
+*** Picture
+:PROPERTIES:
+:beamer_col: 0.5
+:END:
+
+# #+ATTR_LATEX: :angle 90
+# [[file:20181204_214903.jpg]]
+
+#+latex: \includegraphics[width=.9\linewidth, angle=90]{20181204_214903.jpg}
+
+*** Picture
+:PROPERTIES:
+:beamer_col: 0.5
+:END:
+
+# #+ATTR_LATEX: :angle 90
+# [[file:20181204_141944.jpg]]
+
+#+latex: \includegraphics[width=.9\linewidth, angle=90]{20181204_141944.jpg}
