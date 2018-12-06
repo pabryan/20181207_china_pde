@@ -214,5 +214,39 @@ There exists a unique solution $\{M_t\}$ of the flow such that $\{\tilde{M}_t\}$
 #+END_theorem
 
 * Outline of The Proof
-* $C^2$ Estimates
+** Upper Bound On Gauss Curvature: Chou's Method, And Ivaki's Method Of Polar Bodies
 
+- Chou's methods: Apply the maximum principle to \(\partial_t h/(2c - h)\) to conclude that support function bounds \(c' \leq h \leq c\) imply Gauss curvature bounds \(K \leq C\). \pause
+- Polar dual:
+  \[
+  \Omega^{\ast} = \{y \in \RR^{n+1} : \ip{y}{x} \leq 1 \forall x \in \Omega\}
+  \]
+  \pause
+
+  The polar dual contracts with similar evolution to \(\Omega\) but more complicated quasie-linear coefficient. \pause
+
+  Still the maximum principal provides an upper bound
+  \[
+  K^{\ast} \leq a + b t^{\tfrac{-n}{n+1}}
+  \]
+  \pause
+
+  Now use the fact that for all \(z \in \sphere^n\) there exists a \(z^{\ast} \in \sphere^n\) such that
+  \[
+  K(z) h^{n+2}(z) K^{\ast} (z^{\ast}) h^{*n+2}(z^{\ast}) = 1
+  \]
+  to convert the upperbound on \(K^{\ast}\) into a lower bound on \(K\).
+
+** \(C^2\) Estimates: Bounds On Hessian
+** Convergence
+
+- For \(p \geq n + 1\): Long time existence with \(\lim_{t\to \infty} h = \infty\) by comparison with spheres. \pause
+- For \(p < n + 1\) we only have finite time existence but \(\lim_{t \to T} h = \infty\) since otherwise the \(C^2\) estimates give uniform parabolicity and Krylov-Safanov allows the flow to be extended. \pause
+- \(C^1\) sub-sequential convergence:
+  - Ivaki: Rescaled flow has uniform bounds \(0 < r \leq h \leq R < \infty\) and \(C^0\) convergence to a fixed point follows (fixed point = solution of Minkowski problem). \pause
+  - Chou-Wang: The fixed point is \(C^{\infty}\). \pause
+  - Andrews: \(C^1\) convergence follows by stability. \pause
+
+*Thus we have shown a fixed point exists and hence obtained a solution to the \(L_p\)-Minkowski problem.* \pause
+
+Further convergence results can be obtained standard arguments exploiting the \(C^2\) estimates.
