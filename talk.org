@@ -81,7 +81,7 @@ Prescribed Gauss curvature \(K\) since if \(K(x) = 1/\varphi(\nu(x))\), then
 
 ** Minkowksi Sums, Mixed Volumes And Integral Formula
 
-- Let \(\Omega, \Omega'\) be convex bodies with support functions \(h_1, h_2\). \pause
+- Let \(\Omega, \Omega'\) be convex bodies with support functions \(h, h'\). \pause
 - For \(\lambda, \lambda' \geq 0\)
   - Define \(\lambda \Omega + \lambda' \Omega'\) to be the convex body with support function \(\lambda h + \lambda' h\). \pause
 
@@ -95,7 +95,7 @@ Integral Representation
 \[
 V_1(\Omega, \Omega') = \frac{1}{n+1} \int_{\sphere^n} h'(z) d\sigma_1(z)
 \]
-where \(\sigma_1 = \nu_{\sharp} \sigma = \frac{1}{K} \sigma_{\sphere^n}\). \pause
+where \(\sigma_1 = \nu_{\sharp} \sigma_{\partial \Omega} = \frac{1}{K} \sigma_{\sphere^n}\). \pause
 
 - Prescribed curvature: \(\Omega' = \mathbb{B}^{n+1} \Rightarrow h' \equiv 1\). Given \(\sigma = \varphi \sigma_{\sphere^n}\), solve for \(K = \varphi^{-1}\)!
 
@@ -159,10 +159,10 @@ F(\cdot,0) &= F_{0}(\cdot).
 #+end_export
 \pause
 
-- Speed \(V = \varphi h^{2-p} K^{-1}\) is /anisotropic/ with dependence not only on \(\nu\) but also \(h\). \pause
+- Speed \(X = \varphi h^{2-p} K^{-1}\) is /anisotropic/ with dependence not only on \(\nu\) but also \(h\). \pause
 - Expect convergence to self-similar solutions (after volume normalisation) satisfying:
   \[
-  h = \ip{F}{\nu} = \text{const} V = \text{const} \> h^{2-p} \varphi K^{-1}.
+  h = \ip{F}{\nu} = \text{const} X = \text{const} \> h^{2-p} \varphi K^{-1}.
   \]
   \pause
 
@@ -198,7 +198,7 @@ There exists a unique origin-symmetric solution $\{M_t\}$ of the flow such that 
 ** Convergence Results Of The Flow: \(-(n+1) < p < -n\)
 
 Let $-(n+1) < p\leq -n$, and /do not assume/ $\varphi$ is even. Let the initial body $\Omega_0$ have \santalo{} point at the origin, i.e.
-$$\int_{\mathbb{S}^{n}}\frac{u}{h_{\omega_0}(u)^{1-p}} \frac{1}{\varphi(u)} d\sigma(u)=0.$$
+$$\int_{\mathbb{S}^{n}}\frac{u}{h_{\Omega_0}(u)^{1-p}} \frac{1}{\varphi(u)} d\sigma(u)=0.$$
 \pause
 
 #+BEGIN_theorem
@@ -216,16 +216,16 @@ There exists a unique solution $\{M_t\}$ of the flow such that $\{\tilde{M}_t\}$
 #+END_theorem
 
 * Outline of The Proof
-** Upper Bound On Gauss Curvature: Chou's Method, And Ivaki's Method Of Polar Bodies
+** Upper Bound On Gauss Curvature: Chou's Method, And Ivaki's/Stancu's Method Of Polar Bodies
 
-- Chou's methods: Apply the maximum principle to \(\partial_t h/(2c - h)\) to conclude that support function bounds \(c' \leq h \leq c\) imply Gauss curvature bounds \(K \leq C\). \pause
+- Chou's method: Apply the maximum principle to \(\partial_t h/(2c - h)\) to conclude that support function bounds \(c' \leq h \leq c\) imply Gauss curvature bounds \(K \leq C\). \pause
 - Polar dual:
   \[
   \Omega^{\ast} = \{y \in \RR^{n+1} : \ip{y}{x} \leq 1 \forall x \in \Omega\}
   \]
   \pause
 
-  The polar dual contracts with similar evolution to \(\Omega\) but more complicated quasie-linear coefficient. \pause
+  The polar dual contracts with similar evolution to \(\Omega\) but more complicated quasi-linear coefficient. \pause
 
   Still the maximum principal provides an upper bound
   \[
@@ -249,7 +249,7 @@ Define
 
 Apply the maximum principle to show that for \(\alpha >> 0\), \(\Theta < 0\). \pause
 
-If the conclusion is false so that \(\Thetae = 0\), then we have bounds:
+If the conclusion is false so that \(\Theta = 0\), then we have bounds:
 \[
 \frac{c_1^{\alpha}}{\sqrt{n}}\leq \kappa_{\max} \leq c_2^{\alpha}.
 \]
@@ -258,7 +258,7 @@ where \(c_1 \leq h \leq c_2\).
 
 If there exists positive numbers \(\delta_2, \dots, \delta_n\) such that
 \[
-\kappa_i \geq \delta \kappa_{\max}
+\kappa_i \geq \delta_i \kappa_{\max}
 \]
 we obtain a contradiction to bounds on \(K\) for \(\alpha\) large.
 
